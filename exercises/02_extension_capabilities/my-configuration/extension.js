@@ -14,17 +14,43 @@ function activate(context) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "my-configuration" is now active!');
 
+	const get_config = (key) => vscode.workspace.getConfiguration('my-configuration').get(key)
+
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('my-configuration.helloWorld', function () {
+	context.subscriptions.push(vscode.commands.registerCommand('my-configuration.helloWorld', function () {
 		// The code you place here will be executed every time your command is executed
-
+		const site_folder = get_config("site.folder")
+		const tool_path = get_config("tool.path")
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from my_configuration!');
-	});
+		vscode.window.showInformationMessage(`cd ${site_folder} && ${tool_path} -h`);
+	}));
 
-	context.subscriptions.push(disposable);
+	context.subscriptions.push(vscode.commands.registerCommand('my-configuration.add_idea', function () {
+		// The code you place here will be executed every time your command is executed
+		const site_folder = get_config("site.folder")
+		const tool_path = get_config("tool.path")
+		// Display a message box to the user
+		vscode.window.showInformationMessage(`cd ${site_folder} && ${tool_path} idea xxx`);
+	}));
+
+	context.subscriptions.push(vscode.commands.registerCommand('my-configuration.add_stone', function () {
+		// The code you place here will be executed every time your command is executed
+		const site_folder = get_config("site.folder")
+		const tool_path = get_config("tool.path")
+		// Display a message box to the user
+		vscode.window.showInformationMessage(`cd ${site_folder} && ${tool_path} stone xxx`);
+	}));
+
+	context.subscriptions.push(vscode.commands.registerCommand('my-configuration.add_til', function () {
+		// The code you place here will be executed every time your command is executed
+		const site_folder = get_config("site.folder")
+		const tool_path = get_config("tool.path")
+		// Display a message box to the user
+		vscode.window.showInformationMessage(`cd ${site_folder} && ${tool_path} til xxx`);
+	}));
+
 }
 
 // This method is called when your extension is deactivated
