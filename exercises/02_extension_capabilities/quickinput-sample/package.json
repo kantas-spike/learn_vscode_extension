@@ -13,9 +13,26 @@
   "main": "./extension.js",
   "contributes": {
     "commands": [{
-      "command": "quickinput-sample.helloWorld",
-      "title": "Hello World"
-    }]
+      "command": "quickinput-sample.selectItem",
+      "category": "quickinput",
+      "title": "Select Item"
+    },
+    {
+      "command": "quickinput-sample.getUserInput",
+      "category": "quickinput",
+      "title": "Get User Input"
+    },
+    {
+      "command": "quickinput-sample.selectFolder",
+      "category": "quickinput",
+      "title": "Select Folder"
+    },
+    {
+      "command": "quickinput-sample.addIdea",
+      "category": "quickinput",
+      "title": "Add Idea"
+    }
+  ]
   },
   "scripts": {
     "lint": "eslint .",
