@@ -25,3 +25,9 @@
 - Extension Capabilities
 - Extension Guides
 - UX Guidelines showcases best practices for providing a great user experience in an extension.
+
+## 参考
+
+- QuickInput
+  - [QuickInputとInputBoxを利用してユーザー入力を受け付ける - Visual Studio Codeの拡張機能を開発する | Yucchiy's Note](https://blog.yucchiy.com/2021/05/vscode-quickinput-inputbox/)
+  - [lived/extension.js at 3da0bb1a31f2d98867a21e4cb58706ae6b62e299 · jeffalo/lived](https://github.com/jeffalo/lived/blob/3da0bb1a31f2d98867a21e4cb58706ae6b62e299/extension.js#L54)
