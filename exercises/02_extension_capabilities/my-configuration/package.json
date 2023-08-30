@@ -1,0 +1,67 @@
+{
+  "name": "my-configuration",
+  "displayName": "my_configuration",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "my-configuration.helloWorld",
+      "category": "My Config",
+      "title": "Hello World"
+    },
+    {
+      "command": "my-configuration.add_idea",
+      "category": "My Config",
+      "title": "Add Idea"
+    },
+    {
+      "command": "my-configuration.add_stone",
+      "category": "My Config",
+      "title": "Add Stone"
+    },
+    {
+      "command": "my-configuration.add_til",
+      "category": "My Config",
+      "title": "Add TIL"
+    }],
+    "configuration": {
+      "title": "My Configuration",
+      "properties":
+      {
+        "my-configuration.site.folder": {
+          "type": "string",
+          "default": "~/ibank",
+          "markdownDescription": "web site folder"
+        },
+        "my-configuration.tool.path": {
+          "type": "string",
+          "default": "~/bin/add_ibank.py",
+          "markdownDescription": "shell script for adding content to site"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.81.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6",
+    "@vscode/test-electron": "^2.3.4"
+  }
+}
